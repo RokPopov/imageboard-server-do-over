@@ -23,4 +23,15 @@ router.post("/", async (req, res, next) => {
   }
 });
 
+router.get("/:imgId", async (req, res, next) => {
+  try {
+    const imgId = req.params.imgId;
+    const image = await Image.findByPk(imgId);
+    res.json(image);
+  } catch (error) {
+    console.log(error);
+    next();
+  }
+});
+
 module.exports = router;
