@@ -1,4 +1,4 @@
-const { Router } = express();
+const { Router } = require("express");
 
 const Image = require("../models").image;
 
